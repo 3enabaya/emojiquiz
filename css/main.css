@@ -4,7 +4,12 @@
 
 .hide {
   display: none;
-}/*# sourceMappingURL=main.css.map */
-body{
-  background-color: rgba(168, 235, 253, 0.887);
 }
+
+.game {
+  margin: 0 auto;
+}
+
+body {
+  background-color: rgb(152, 247, 247);
+}/*# sourceMappingURL=main.css.map */

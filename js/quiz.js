@@ -2,10 +2,12 @@ let start = document.getElementById('start')
 let home = document.getElementById('quizapp')
 let quiz1 = document.getElementById('firstpage')
 let picone = document.getElementById('picone')
+let gamefinish = document.getElementById('gamefinish')
 let pictwo = document.getElementById('pictwo')
 let input = document.getElementById('input')
 let submit = document.getElementById('submit')
 let skip = document.getElementById('skip')
+let again = document.getElementById('again')
 let finish = document.getElementById('finish')
 let finished = document.getElementById('finished')
 let urscore = document.getElementById('score')
@@ -16,6 +18,11 @@ let win = document.getElementById('win')
 let wrong = document.getElementById('wrong')
 let fail = document.getElementById('fail')
 let audio = document.getElementById('audio')
+again.onclick= function(){
+    home.classList.remove('hide')
+    quiz1.classList.add('hide');
+    finished.classList.add('hide')
+}
 start.onclick = function () {
     // getting the game space
     home.classList.add('hide');
@@ -90,6 +97,7 @@ start.onclick = function () {
                 }
                 else {
                     fail.play()
+                    console.log(gamefinish)
                 }
                 score = 10
                 sum = score + sum
@@ -102,9 +110,13 @@ start.onclick = function () {
             else {
                 if (sum == 100) {
                     win.play()
+                    gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won`  
+
                 }
                 else {
                     fail.play()
+                    gamefinish.innerHTML = `Gameover`  
+
                 }                finished.classList.remove('hide')
                 quiz1.classList.add('hide')
                 finalscore.innerHTML = `your score is ${sum}`  
