@@ -72,6 +72,7 @@ start.onclick = function () {
                     submit.classList.add('hide')
                     finish.classList.remove('hide')
                     skip.classList.add('hide')
+                    return console.log('end')
             } 
             }
         }
@@ -89,35 +90,30 @@ start.onclick = function () {
           }
         } 
         finish.onclick = function () {
-            if (input.value == data[data.length - 1].answer) {
+            if (input.value.toLowerCase().trim().replaceAll(" ","") == data[data.length - 1].answer) {
+                submit.classList.add('hide')
+                quiz1.classList.add('hide')
+                finished.classList.remove('hide')
                 score = 10
                 sum = score + sum
                 console.log('d')
-                finished.classList.remove('hide')
-                quiz1.classList.add('hide')
-                finalscore.innerHTML = `your score is ${sum}`
                 if (sum == 100) {
                     win.play()
-                }
-                else {
-                    fail.play()
-                    console.log(gamefinish)
-                }
-               
-               
-            }
-            else {
-                if (sum == 100) {
-                    win.play()
-                    gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won`  
+                    gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won` 
+                    
                 }
                 else {
                     fail.play()
                     gamefinish.innerHTML = `Gameover`  
-
-                }                finished.classList.remove('hide')
-                quiz1.classList.add('hide')
-                finalscore.innerHTML = `your score is ${sum}`  
+                    finalscore.innerHTML = `your score is ${sum}`  
+             }
+            }
+            else {
+                    fail.play()
+                    gamefinish.innerHTML = `Gameover`  
+                  finished.classList.remove('hide')
+                  quiz1.classList.add('hide')
+                  finalscore.innerHTML = `your score is ${sum}`  
              }
         }
         
