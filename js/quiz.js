@@ -19,9 +19,7 @@ let wrong = document.getElementById('wrong')
 let fail = document.getElementById('fail')
 let audio = document.getElementById('audio')
 again.onclick= function(){
-    home.classList.remove('hide')
-    quiz1.classList.add('hide');
-    finished.classList.add('hide')
+    location.reload();
 }
 start.onclick = function () {
     // getting the game space
@@ -92,6 +90,12 @@ start.onclick = function () {
         } 
         finish.onclick = function () {
             if (input.value == data[data.length - 1].answer) {
+                score = 10
+                sum = score + sum
+                console.log('d')
+                finished.classList.remove('hide')
+                quiz1.classList.add('hide')
+                finalscore.innerHTML = `your score is ${sum}`
                 if (sum == 100) {
                     win.play()
                 }
@@ -99,19 +103,13 @@ start.onclick = function () {
                     fail.play()
                     console.log(gamefinish)
                 }
-                score = 10
-                sum = score + sum
-                console.log('d')
-                finished.classList.remove('hide')
-                quiz1.classList.add('hide')
-                finalscore.innerHTML = `your score is ${sum}`  
+               
                
             }
             else {
                 if (sum == 100) {
                     win.play()
                     gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won`  
-
                 }
                 else {
                     fail.play()
