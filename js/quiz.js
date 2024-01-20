@@ -114,14 +114,14 @@ again.onclick= function(){
                     if (sum = 100) {
                         win.play()
                         gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won`
-                        imgg.setAttribute('src', '/pics/happy.png')
+                        imgg.setAttribute('src', './pics/happy.png')
 
                     }
                     else {
                         fail.play()
                         gamefinish.innerHTML = `Gameover`
                         finalscore.innerHTML = `your score is ${sum}`
-                        imgg.setAttribute('src', '/pics/happy.png')
+                        imgg.setAttribute('src', './pics/sad.png')
                     }
                 }
                 else {
@@ -130,7 +130,7 @@ again.onclick= function(){
                     finished.classList.remove('hide')
                     quiz1.classList.add('hide')
                     finalscore.innerHTML = `your score is ${sum}`
-                    imgg.setAttribute('src', '/pics/happy.png')
+                    imgg.setAttribute('src', './pics/sad.png')
                     
                 }
             }
