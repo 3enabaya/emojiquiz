@@ -121,7 +121,7 @@ again.onclick= function(){
                         fail.play()
                         gamefinish.innerHTML = `Gameover`
                         finalscore.innerHTML = `your score is ${sum}`
-                        imgg.setAttribute('src', './pics/crying_11570815.png')
+                        imgg.setAttribute('src', '/pics/happy.png')
                     }
                 }
                 else {
@@ -130,7 +130,7 @@ again.onclick= function(){
                     finished.classList.remove('hide')
                     quiz1.classList.add('hide')
                     finalscore.innerHTML = `your score is ${sum}`
-                    imgg.setAttribute('src', './pics/crying_11570815.png')
+                    imgg.setAttribute('src', '/pics/happy.png')
                     
                 }
             }
