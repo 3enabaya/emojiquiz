@@ -7,7 +7,6 @@
 }
 
 body {
-  background-image: url(../pics/back.jpg);
   background: opacity 0.1px;
   position: relative;
   width: 100vw;
@@ -28,6 +27,7 @@ body {
 
 .emojiquiz {
   font-size: 4rem;
+  width:fit-content;
   padding-bottom: 12px;
   border-radius: 5%;
   text-shadow: 5px 3px #0f9ddb;
