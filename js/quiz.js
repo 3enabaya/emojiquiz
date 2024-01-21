@@ -1,6 +1,4 @@
 let start = document.getElementById('start')
-let arabic = document.getElementById('arabic')
-
 let home = document.getElementById('quizapp')
 let quiz1 = document.getElementById('firstpage')
 let picone = document.getElementById('picone')
