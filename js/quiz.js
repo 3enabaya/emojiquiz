@@ -20,17 +20,14 @@ let wrong = document.getElementById('wrong')
 let fail = document.getElementById('fail')
 let audio = document.getElementById('audio')
 
-
+// play again button
 again.onclick= function(){
     location.reload();
 }
-
-
-
-
+// start game
     start.onclick = function (e) {
         e = 'quiz.json'
-        // getting the game space
+// getting the data 
         home.classList.add('hide');
         quiz1.classList.remove('hide')
         // getting the data 
@@ -46,9 +43,9 @@ again.onclick= function(){
                 if (e.key === 'Enter') {
                     submit.click()
                 }
-            })
+            // }) submit button 
             submit.onclick = function () {
-                console.log('hbala')
+                // if the answer is correct
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[i].answer) {
                     audio.play()
                     console.log(input.value)
@@ -57,23 +54,24 @@ again.onclick= function(){
                     urscore.innerHTML = `${sum}/ 100`
                     i < data.length;
                     i++
-                    console.log(input.value)
-                    console.log(i)
                     picone.setAttribute('src', `./pics/${data[i].firstpic}`)
                     pictwo.setAttribute('src', `./pics/${data[i].secondpic}`)
                     input.value = " "
+                    // the last element
                     if (i === data.length - 1) {
                         submit.classList.add('hide')
                         finish.classList.remove('hide')
                         skip.classList.add('hide')
                     }
                 }
+                    // the answer is not correct
                 else {
                     wrong.play()
                     score = 0
                     sum = sum + score
                     i < data.length;
                     i++
+                    urscore.innerHTML = `${sum}/ 100`
                     picone.setAttribute('src', `./pics/${data[i].firstpic}`)
                     pictwo.setAttribute('src', `./pics/${data[i].secondpic}`)
                     input.value = " "
@@ -85,7 +83,7 @@ again.onclick= function(){
                     }
                 }
             }
-            
+            // skip button
             skip.onclick = function () {
                 i < data.length;
                 i++
@@ -99,22 +97,22 @@ again.onclick= function(){
                     skip.classList.add('hide')
                 }
             }
+                // finish button
             finish.onclick = function () {
               
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[data.length - 1].answer) {
-                    console.log('fffffff')
                     submit.classList.add('hide')
                     quiz1.classList.add('hide')
                     finished.classList.remove('hide')
                     score = 10
                     sum = score + sum
-                    console.log('d')
-                    if (sum = 100) {
+                    // winning
+                    if (sum == 100) {
                         win.play()
                         gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won`
                         imgg.setAttribute('src', './pics/happy.png')
-
                     }
+                   // failing
                     else {
                         fail.play()
                         gamefinish.innerHTML = `Gameover`
