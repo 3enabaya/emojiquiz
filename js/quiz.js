@@ -45,7 +45,6 @@ again.onclick= function(){
             })
              //correct answer condition
             submit.onclick = function () {
-                console.log('hbala')
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[i].answer) {
                     audio.play()
                     console.log(input.value)
@@ -101,13 +100,11 @@ again.onclick= function(){
             //winning condition
 
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[data.length - 1].answer) {
-                    console.log('fffffff')
                     submit.classList.add('hide')
                     quiz1.classList.add('hide')
                     finished.classList.remove('hide')
                     score = 10
                     sum = score + sum
-                    console.log('d')
                     if (sum == 100) {
                         win.play()
                         gamefinish.innerHTML = `Amazing !!!!!!!!!!! You Won`
