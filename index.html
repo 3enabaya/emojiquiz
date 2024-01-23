@@ -8,7 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Francois+One|Oswald:400,600&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="./css/main.css">
     <title>emojiquiz</title>
 </head>
+    
 <body class="bg-info-subtle">
+<!--     the audio files -->
     <audio id="fail"> <source  src="./audio/fail.mp3" type="audio/wav"> </audio>
     <audio id="win"> <source  src="./audio/win.wav" type="audio/wav"> </audio>
     <audio id="wrong"> <source  src="./audio/wrong-answer-126515.mp3" type="audio/wav"> </audio>
@@ -16,7 +18,7 @@
       
 
 
-
+<!-- game interface -->
 <div class="game">
 <div class="quiz-app" id="quizapp">
     <div class="container">
@@ -27,7 +29,6 @@
          <h1> Can You  Guess The Word ? </h1> 
        <p> Look At The Emojis And Guess The Word </p>
      <button class="btn btn-dark" id="start">  Start Game</button>
-
         </div>
     </div>   
     </div>
@@ -38,6 +39,7 @@
 
 
 
+<!--the game -->
 
 <div class="hide row justify-content-center " id="firstpage">
     <div class="container">
@@ -50,7 +52,6 @@
     <div class="div row justify-content-center mt-2"> 
         <div class=" col-12 text-center "> 
         <input id="input" type="text" class="col-md-4 col-sm-6 rounded-4 m-3" >
-    
        </div>       
         <div class=" col-6  text-center justify-content-center  "> 
         <button id="submit" class="btn btn-dark"> Submit</button>
@@ -61,6 +62,8 @@
  </div>    
 </div>
 </div>
+    
+<!--the game result -->
 <div class="finished hide row  mt-5" id="finished">
     <div class="container">
         <div class="end-box row p-5 justify-content-center bg-white ">
