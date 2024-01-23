@@ -19,9 +19,11 @@ let win = document.getElementById('win')
 let wrong = document.getElementById('wrong')
 let fail = document.getElementById('fail')
 let audio = document.getElementById('audio')
+// play again button
 again.onclick= function(){
     location.reload();
 }
+// start game
     start.onclick = function (e) {
         e = 'quiz.json'
         // getting the game space
@@ -41,6 +43,7 @@ again.onclick= function(){
                     submit.click()
                 }
             })
+             //correct answer condition
             submit.onclick = function () {
                 console.log('hbala')
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[i].answer) {
@@ -79,7 +82,8 @@ again.onclick= function(){
                     }
                 }
             }
-            
+ //skip button
+           
             skip.onclick = function () {
                 i < data.length;
                 i++
@@ -94,7 +98,8 @@ again.onclick= function(){
                 }
             }
             finish.onclick = function () {
-              
+            //winning condition
+
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[data.length - 1].answer) {
                     console.log('fffffff')
                     submit.classList.add('hide')
@@ -115,6 +120,8 @@ again.onclick= function(){
                         imgg.setAttribute('src', './pics/crying_11570815.png')
                     }
                 }
+ //fail 
+           
                 else {
                     fail.play()
                     gamefinish.innerHTML = `Gameover`
