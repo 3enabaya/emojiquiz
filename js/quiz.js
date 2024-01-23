@@ -24,7 +24,7 @@ let audio = document.getElementById('audio')
 again.onclick= function(){
     location.reload();
 }
-// start game
+
     start.onclick = function (e) {
         e = 'quiz.json'
 // getting the data 
@@ -43,9 +43,8 @@ again.onclick= function(){
                 if (e.key === 'Enter') {
                     submit.click()
                 }
-            // }) submit button 
+             }) 
             submit.onclick = function () {
-                // if the answer is correct
                 if (input.value.toLowerCase().trim().replaceAll(" ", "") == data[i].answer) {
                     audio.play()
                     console.log(input.value)
@@ -64,7 +63,7 @@ again.onclick= function(){
                         skip.classList.add('hide')
                     }
                 }
-                    // the answer is not correct
+                 
                 else {
                     wrong.play()
                     score = 0
